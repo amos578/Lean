@@ -22,12 +22,11 @@ example : ¬ (11 ∣ 87) := begin
   sorry
 end
 example : ∀ x : ℤ, 1 ∣ x := begin -- Every number is dvisible by 1.
-  intro x, unfold has_dvd.dvd, 
+  intro x,
   use x, 
   simp, 
 end
 example (x : ℤ) : 2 ∣ x ↔ even x := begin -- A number is divisible by 2 iff it is even.
-  unfold has_dvd.dvd,
   split,
    repeat {intro h, 
            cases h with k hk,
